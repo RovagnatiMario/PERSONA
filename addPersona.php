@@ -11,7 +11,10 @@
 //la parola required è un vincolo HTML che forza l'inserimento dei dati e se vogliamo essere sicuri che l'utente abbia inserito almeno un dato, se esso viene posto alla 
 //fine del form esso non basta
 
-//Il punto di domanda indica che dopo diesso ci saranno tutti i valori acquisiti, i quali saranno divisi dalla &
+//Il punto di domanda indica che dopo di esso ci saranno tutti i valori acquisiti, i quali saranno divisi dalla &
+    include "lib/config.php";
+    include "lib/connessioneDB.php";
+    include "lib/stampaPersone.php";
 ?>
 
 <html>
@@ -54,6 +57,12 @@
 
                 <button type="submit" name="crea_persona">Crea Persona</button>
             </form>
+        </div>
+        <div>
+            <h2>PERSONE REGISTRATE:</h2>
+            <?php
+                stampaPersone($hostname, $username, $password, $database, $port);
+            ?>
         </div>
     </body>
 </html>
